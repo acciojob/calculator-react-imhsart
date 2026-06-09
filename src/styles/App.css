@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container{
+.Calculator{
     display: flex;
     flex-direction: column;
     width: 400px;
