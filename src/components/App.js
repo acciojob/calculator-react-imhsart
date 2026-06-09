@@ -52,7 +52,7 @@ const App = () => {
         <button className="one" id="btn-1" value='1' onClick={handleClick}>1</button>
         <button className="one" id="btn-2" value='2' onClick={handleClick}>2</button>
         <button className="one" id="btn-3" value='3' onClick={handleClick}>3</button>
-        <button className="two" id="equals-to" value='=' onClick={handleClick}>=</button>
+        <button className="two" id="equal" value='=' onClick={handleClick}>=</button>
         <button className="one" id="btn-0" value='0' onClick={handleClick}>0</button>
         <button className="one" id="." value='.' onClick={handleClick}>.</button>
         <button className="one"></button>
