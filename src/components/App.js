@@ -21,18 +21,44 @@ const App = () => {
       return
     }
     if(val === '='){
+      if(!operatorRef.current || !(operatorRef.current in map)){
+        setExpression('Error')
+        return
+      }
       let idx = expression.indexOf(operatorRef.current)
-      operandTwoRef.current = Number(expression.slice(idx+1))
+      let temp = expression.slice(idx+1)
+      if(temp === '' || isNaN(Number(temp))){
+        setExpression('Error')
+        return
+      }
+
+      operandTwoRef.current = Number(temp)
+      if(operandOneRef.current === null || isNaN(operandOneRef.current)){
+        setExpression('Error')
+        return
+      }
       let res = map[operatorRef.current](operandOneRef.current,operandTwoRef.current)
-      // setExpression(res)
-      setExpression(
-        `expr=${expression}, op1=${operandOneRef.current}, op=${operatorRef.current}`
-      )
+      if(!isFinite(res) || isNaN(res)){
+        setExpression('Error')
+        return
+      }
+      operandOneRef.current = null;
+      operandTwoRef.current = null;
+      operatorRef.current = '';
+      setExpression(String(res))
     }else if(val in map){
-      operandOneRef.current = Number(expression.slice())
+      if (expression === '' || map[expression[expression.length - 1]]) {
+      setExpression('Error');
+      return;
+    }
+      operandOneRef.current = Number(expression)
       operatorRef.current = val
       setExpression(prev => prev+val)
     }else{
+      if (expression === 'Error') {
+      setExpression(val);
+      return;
+    }
       setExpression(prev => prev+val)
     }
     
