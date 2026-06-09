@@ -38,7 +38,7 @@ const App = () => {
     <div className="Calculator">
       <div className="display-screen">{expression}</div>
       <div className="keypad">
-        <button className="one" id="clear" value='C' onClick={handleClick}>C</button>
+        <button className="one" id="calci" value='C' onClick={handleClick}>C</button>
         <button className="one" id="btn-div" value='/' onClick={handleClick}>/</button>
         <button className="one" id="btn-mul" value='*' onClick={handleClick}>*</button>
         <button className="one" id="btn--" value='-' onClick={handleClick}>-</button>
