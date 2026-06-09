@@ -38,7 +38,11 @@ const App = () => {
         return
       }
       let res = map[operatorRef.current](operandOneRef.current,operandTwoRef.current)
-      if(!isFinite(res) || isNaN(res)){
+      if(!isFinite(res)){
+        setExpression('Infinity')
+        return
+      }
+      if(isNaN(res)){
         setExpression('Error')
         return
       }
