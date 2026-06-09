@@ -1,12 +1,40 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
-
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 30px auto;
+}
+.display-screen{
+    height: 50px;
+    background-color: rgb(1, 7, 83);
+    color:rgb(84, 181, 181);
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px 5px;
+}
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5,1fr);
+}
 button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    height: 40px;
+    color: grey;
+    border: 1px solid grey;
+    font-size: 16px;
+    background-color: rgb(228, 228, 228);
+}
+.one{
+    grid-column: span 1;
+}
+.two{
+    grid-row: span 2;
+    height: 80px;
 }
