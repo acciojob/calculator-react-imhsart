@@ -24,7 +24,10 @@ const App = () => {
       let idx = expression.indexOf(operatorRef.current)
       operandTwoRef.current = Number(expression.slice(idx+1))
       let res = map[operatorRef.current](operandOneRef.current,operandTwoRef.current)
-      setExpression(res)
+      // setExpression(res)
+      setExpression(
+        `expr=${expression}, op1=${operandOneRef.current}, op=${operatorRef.current}`
+      )
     }else if(val in map){
       operandOneRef.current = Number(expression.slice())
       operatorRef.current = val
@@ -38,7 +41,7 @@ const App = () => {
     <div className="Calculator">
       <div className="display-screen" id="calci">{expression}</div>
       <div className="keypad">
-        <button className="one" id="clear" value='C' onClick={handleClick}>C</button>
+        <button className="one" id="btn-C" value='C' onClick={handleClick}>C</button>
         <button className="one" id="btn-div" value='/' onClick={handleClick}>/</button>
         <button className="one" id="btn-mul" value='*' onClick={handleClick}>*</button>
         <button className="one" id="btn--" value='-' onClick={handleClick}>-</button>
